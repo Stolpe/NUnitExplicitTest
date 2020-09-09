@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 
 namespace Tests
 {
@@ -20,5 +21,17 @@ namespace Tests
         {
             throw new Exception();
         }
+
+        [TestCaseSource(nameof(TestCases))]
+        [Explicit]
+        public void TestCaseSourceStillDoesntWork()
+        {
+            throw new Exception();
+        }
+
+        private static readonly IEnumerable<string> TestCases = new[]
+        {
+            "case1"
+        };
     }
 }
