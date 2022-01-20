@@ -1,24 +1,22 @@
 ﻿using NUnit.Framework;
-using System;
 
-namespace Tests
+namespace Tests;
+
+public class NUnitTests
 {
-    public class NUnitTests
+    [Test]
+    public void TestThatWorks()
+    { }
+
+    [Test, Ignore("Does not work")]
+    public void IgnoredTestDoesntWork()
     {
-        [Test]
-        public void TestThatWorks()
-        { }
+        throw new Exception();
+    }
 
-        [Test, Ignore("Does not work")]
-        public void IgnoredTestDoesntWork()
-        {
-            throw new Exception();
-        }
-
-        [Test, Explicit]
-        public void ExplicitTestDoesntWork()
-        {
-            throw new Exception();
-        }
+    [Test, Explicit]
+    public void ExplicitTestDoesntWork()
+    {
+        throw new Exception();
     }
 }
